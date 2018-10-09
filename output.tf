@@ -8,6 +8,11 @@ output "security_group_id" {
   description = "Security group id"
 }
 
+output "security_group_name" {
+  value       = "${join("", aws_security_group.default.*.name)}"
+  description = "Security group name"
+}
+
 output "port" {
   value       = "${var.port}"
   description = "Redis port"
